@@ -44,53 +44,6 @@ const anzeigeEinträge = (array, farbe, kategorie) => {
   }
 };
 
-// Drag and Drop - Sticker
-const anzeigeSticker = (array, level) => {
-  const popUp_Sticker = document.querySelector('.popUp_sticker');
-  var i = 0;
-  popUp_Sticker.innerHTML = "";
-
-  for (var item in array) {
-    if (i < level) {
-        const htmlSticker = `
-        <div class="panel_sticker_Tagebuch_popup" value="${array[item]}" onclick="saveSticker(this)">
-          <img src="./bilder/sticker/${array[item]}">
-        </div>
-        `;
-        popUp_Sticker.innerHTML += htmlSticker;
-    } 
-    i++;
-  }
-};
-
-
-
-var downloadArray = {              
-  arrayOne: [], 
-}; 
-
-
-
-function getDownloadArray() {
-  return downloadArray;
-}
-
-
-// Meine Punkte - Verlauf
-const anzeigePunkteverlauf = (array) => {
-  // console.log(array);
-  const verlauf = document.querySelector('.punkte_liste');
-  for (var item in array) {
-    if (array[item].Punkte != null && array[item].Name != null) {
-      const html = `
-          <li><img src="./bilder/stern-weiss.png">${array[item].Punkte}: ${array[item].Name}</li>
-        `;
-      verlauf.innerHTML += html;
-    }
-  }
-};
-
-
 function datumsFormat(date, typ) {
   var thisDatum = date.split('-');
   var neuesDatum;
