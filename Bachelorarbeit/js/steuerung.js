@@ -30,44 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }); 
     }
-  
-    
-    // Page: Tagebuch Element bearbeiten - Input Feld füllen
-    const inputBearbeiten = document.querySelector("#eintrag_bearbeiten");
-    const inputNeu = document.querySelector("#neuer_eintrag");
-    var kategorie = localStorage.getItem("kategorie");
-    var titel = document.getElementById("titelText");
-    var titel2 = document.getElementById("zweitTitel");
-  
-    if (inputBearbeiten != null) {
-      inputBearbeiten.value = localStorage.getItem("elementText");
-  
-      inputBearbeiten.addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-          event.preventDefault();
-          document.getElementById("speichern").click();
-        }
-      }); 
-    }
-  
-    if (inputNeu != null) {
-      inputNeu.addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-          event.preventDefault();
-          document.getElementById("speichern").click();
-        }
-      }); 
-    }
-    // Titel Überschrift anpassen je nach Kategorie
-    if (titel != null && titel2 != null) {
-      if (kategorie == "Befinden") {
-        titel.innerHTML = "Wie geht es dir heute?";
-        titel2.innerHTML = "Einen neuen Eintrag speichern";
-      } else if (kategorie == "Tagesablauf")  {
-        titel.innerHTML = "Wie war dein Tag?";
-        titel2.innerHTML = "Eine neue Tagesaktivität speichern";
-      }
-    }
   });
 
 /* -------------------------- Benutzeranmeldung --------------------------------*/
@@ -130,11 +92,6 @@ function showStickerAuswahl() {
 }
 
 /* ------------------------------- Tagebuch ------------------------------*/
-function loadTagebuchElemente(array, kategorie) {
-  var farbe = localStorage.getItem("farbe");
-  anzeigeEinträge(array, farbe, kategorie);
-}
-
 function loadTagebuch(array) {
   clearLocalStorage();
   showPunkteBanner();
@@ -152,7 +109,6 @@ function loadTagebuch(array) {
   anzeigeTagebuch(array, zuordnungArray);
 }
 
-  
   function gesamtPunkte(array) {
     var gesamtPunkte = 0;
     for (var item in array) {
@@ -160,14 +116,6 @@ function loadTagebuch(array) {
     }
     localStorage.setItem("gesamtPunkte", gesamtPunkte);
     localStorage.setItem("gesamtPunkteOffline", gesamtPunkte);
-  }
-
-  function selectIcon(daten) {
-    var value = daten.getAttribute("value");
-    localStorage.setItem("Icon", value);
-  
-    iconFärben();
-    daten.style.backgroundColor = "#0CA579";
   }
 
   function setBackground (kategorie) {
@@ -230,50 +178,7 @@ function loadTagebuch(array) {
       }
     }
   }
-
-  
-  function menuWahlHauptFärben() {
-    var kategorie = localStorage.getItem("kategorieHaupt");
-    var alle = document.querySelector(".alle");
-    var befinden = document.querySelector(".befinden");
-    var tagesablauf = document.querySelector(".tagesablauf");
-    const farbeHellblau = "#72DCFF";
-    const farbeDunkelBlau = "#5D8BDB";
-  
-    if (kategorie == "Alle") {
-      alle.style.backgroundColor = farbeHellblau;
-      befinden.style.backgroundColor = farbeDunkelBlau;
-      tagesablauf.style.backgroundColor = farbeDunkelBlau;
-    } else if (kategorie == "Befinden") {
-      alle.style.backgroundColor = farbeDunkelBlau;
-      befinden.style.backgroundColor = farbeHellblau;
-      tagesablauf.style.backgroundColor = farbeDunkelBlau;
-    } else if (kategorie == "Tagesablauf") {
-      alle.style.backgroundColor = farbeDunkelBlau;
-      befinden.style.backgroundColor = farbeDunkelBlau;
-      tagesablauf.style.backgroundColor = farbeHellblau;
-    } else if (kategorie == "") {
-      alle.style.backgroundColor = farbeHellblau;
-      befinden.style.backgroundColor = farbeDunkelBlau;
-      tagesablauf.style.backgroundColor = farbeDunkelBlau;
-    }
-  }
-
-
   /* ------------------------------- Kalender -----------------------------*/
-  function kalenderMenu() {
-    var meine = localStorage.getItem("Meine");
-    var station = localStorage.getItem("Station");
-  
-    // Standard mäßig "Meine" aktivieren
-    if (meine == null) {
-      localStorage.setItem("Meine", "on");
-    }
-    if (station == null) {
-      localStorage.setItem("Station", "off");
-    }
-  }
-
   function kalenderMenuOben(meine, station) {
     var meineTermine = document.querySelector(".meine");
     var stationTermine = document.querySelector(".station");
@@ -307,7 +212,6 @@ function loadTagebuch(array) {
     localStorage.setItem("Page", page);
   }
 
-  
   function datumHeute() {
     var heute = new Date();
     var day = heute.getDate(); // Tag
