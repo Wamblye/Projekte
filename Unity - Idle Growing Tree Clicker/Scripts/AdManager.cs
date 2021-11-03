@@ -63,7 +63,7 @@ public class AdManager : MonoBehaviour
 
     private void RequestBanner()
     {
-        string adUnitID = "ca-app-pub-7188485492395025/1397103963";
+        string adUnitID = "ca-app-pub-xxxxxxxxxxxxxxx";
         this.bannerAd = new BannerView(adUnitID, AdSize.SmartBanner, AdPosition.Bottom);
         AdRequest request = new AdRequest.Builder().Build();
         this.bannerAd.LoadAd(request);
@@ -71,7 +71,7 @@ public class AdManager : MonoBehaviour
 
     public void RequestInterstitial()
     {
-        string adUnitID = "ca-app-pub-7188485492395025/6746645324";
+        string adUnitID = "ca-app-pub-xxxxxxxxxxxxxxx";
 
         // Clean up interstitial ad before creating a new one
         if (this.interstitial != null)
@@ -86,7 +86,7 @@ public class AdManager : MonoBehaviour
 
     public void RequestRewardedAd()
     {
-        string adUnitID = "ca-app-pub-7188485492395025/6022744683";
+        string adUnitID = "ca-app-pub-xxxxxxxxxxxxxxxxxx";
         this.rewardedAd = new RewardedAd(adUnitID);
 
         this.rewardedAd.LoadAd(this.CreateAdRequest());
