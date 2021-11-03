@@ -1,7 +1,7 @@
 # Projekte
 Die dargestellten Dateien sind nur CODE AUSSCHNITTE aus Projekten. Es werden nicht alle Dateien aus Projekten gezeigt, sondern nur relevante. Ein vollständiges Projekt wird aus Datenschutzgründen nicht gezeigt.
 
-#Bachelorarbeit
+# Bachelorarbeit
 In Zusammenarbeit mit der Universitätsklinik Erlangen wurde eine PWA-APP konzipiert und entwickelt, die die Kinder und Jugendlichen der Onkologie Station in ihrer Therapie untersützen soll.
 
 Funktionalitäten:
