@@ -2,7 +2,7 @@
 Die dargestellten Dateien sind nur CODE AUSSCHNITTE aus Projekten. Es werden nicht alle Dateien aus Projekten gezeigt, sondern nur relevante. Ein vollständiges Projekt wird aus Datenschutzgründen nicht gezeigt.
 
 # Bachelorarbeit
-In Zusammenarbeit mit der Universitätsklinik Erlangen wurde eine PWA-APP konzipiert und entwickelt, die die Kinder und Jugendlichen der Onkologie Station in ihrer Therapie untersützen soll.
+In Zusammenarbeit mit der Universitätsklinik Erlangen wurde eine PWA-App konzipiert und entwickelt, die die Kinder und Jugendlichen der Onkologie Station in ihrer Therapie untersützen sollen.
 
 Funktionalitäten:
 - Login für personalisierte Dateneinträge.
@@ -17,4 +17,4 @@ Funktionalitäten:
 - Kalender:
   - Der Kalender können Patienten Termine verwaltet werden. Über Filter können Stations-Termine eingeblendet werden.
   - Termine werden unterhalb des Kalenders nochmal absteigend dargestellt, um einen besseren Überblick welche Termin als nächsten kommt zu gewährleisten.
-Das Tagebuch kann als Datei exportiert werden und Ärzten zum auswerten gegeben werden.
+- Das Tagebuch kann als Datei exportiert werden und Ärzten zum auswerten gegeben werden.
