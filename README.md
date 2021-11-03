@@ -1,2 +1,2 @@
 # Arbeitsproben
-Die dargestellten Arbeitsproben sind nur CODE AUSSCHNITTE auf Projekten.
+Die dargestellten Arbeitsproben sind nur CODE AUSSCHNITTE aus Projekten.
