@@ -1,0 +1,73 @@
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Farbe Leiste -->
+        <meta name="apple-mobile-web-app-status-bar" content="#FFFFFF">
+        <meta name="theme-color" content="#FFFFFF">
+        
+        <title>Offline</title>
+    
+        <link href ="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type ="text/css" href="./css/styles.css" rel="stylesheet">
+        <!-- Icon Webbrowser Registerkarte -->
+        <link rel="shortcut icon" href="./bilder/favicon/favicon.ico">
+        <link rel="icon" type="image/gif" href="./bilder/favicon/animated_favicon1.gif">
+
+        <link rel="manifest" href="./manifest.json">
+        <!-- IOS Unterstuetzung -->
+        <link rel="apple-touch-icon" href="./icons/icon-96x96.png">
+
+        <script src="./js/navigation.js"></script>
+        <!-- Offline Cache -->
+        <script src="./js/app.js"></script>
+
+      </head>
+
+
+
+    <body class="hintergrund_benutzeranmeldung">
+      
+
+      <!-- Oberste Leiste mit Logo -->
+      <header class="nav_header">
+        <button class="button_header" id="btnNav" type="button">
+          <i class="material-icons">menu</i>
+        </button>
+        <div class="logo_Box">
+          <img class="bild_logo_mit_schrift" src="./bilder/uk-logo.png">
+        </div>
+      </header>
+
+      <!-- Pop-Up Menü seitlich -->
+      <nav class="nav_sidebar">
+        <aside class="nav_links">
+          <button class="button_header" id="btnNavOut" type="button">
+            <i class="material-icons">menu</i>
+          </button>
+
+          <a href="./meine_punkte.html" class="nav_link">Meine Punkte</a>
+          <a href="#" class="nav_link">Kontakt</a>
+          <a href="#" class="nav_link">Impressum</a>
+        </aside>
+
+        <div class="nav_overlay"></div>
+      </nav>
+
+      <span class="zentrieren">
+        <p class="header1">HOOOPLA!</p>
+        <p class="text">Sie sind Offline und können diese Seite momentan nicht sehen</p>
+      </span>
+
+      <footer class="box_login_bottom border_none">
+        <a href="./therapieplan.html">
+          <button class="button_login">Zur Startseite</button>
+        </a>
+      </footer>
+    
+    </body>
+  </html>
