@@ -28,12 +28,6 @@ request.onupgradeneeded = function(event) {
    var objectStoreTherapieplan = db.createObjectStore("therapieplan", {keyPath: "id"});
    var objectStoreTagebuch = db.createObjectStore("tagebuch", {keyPath: "id_tagebuch"});
    objectStoreTagebuch.createIndex("zuordnung", "zuordnung", { unique: false });
-   var objectStoreKalender = db.createObjectStore("kalender", {keyPath: "id"});
-   // var objectStoreTagebuchElemente = db.createObjectStore("tagebuch_elemente", {keyPath: "id"});
-   // objectStoreTagebuchElemente.createIndex("Id_Elemente", "Id_Elemente", { unique: true });
-   var objectStoreTagebuchElemente = db.createObjectStore("tagebuch_elemente");
-   objectStoreTagebuchElemente.createIndex("Id_Elemente", "Id_Elemente", { unique: true });
-   var objectStoreTagebuchVerlauf = db.createObjectStore("tagebuch_verlauf", {keyPath: "id_verlauf"});
 }
 
 /* ------------------------------ Therapieplan und Kalender -------------------------------------*/
@@ -120,39 +114,6 @@ function removeDataIndexedDBTagebuchElement(idElemente) {
     console.log("Tagebuch Element wurde erfolgreich aus IndexedDB entfernt");
    };
 }
-
-/* -------------------------------------- Tagebuch Verlauf ------------------------------------*/
-function readAllDataTagebuchVerlauf(onlineStatus) {
-   var database = "tagebuch_verlauf";
-   var objectStore = db.transaction(database).objectStore(database);
-   var array = [];
-   
-   objectStore.openCursor().onsuccess = function(event) {
-      var cursor = event.target.result;
-      
-      if (cursor) {
-         array.push({ "id_verlauf": cursor.key, "Id": cursor.value.id, "Name": cursor.value.name, "Punkte": cursor.value.punkte, 
-            "Bewertung": cursor.value.bewertung, "GesamtPunkte": cursor.value.gesamtPunkte, "Datum": cursor.value.datum, "database": cursor.value.database });
-            cursor.continue();
-      } else {
-        console.log("Laden aus IndexedDB erfolgreich");
-         if(onlineStatus == "online") {
-            for (var i in array) {
-               if (array[i].database == "insert") {
-                  savePunkteVerlaufBenutzerAusIndexedDB(array[i].Id);
-               }
-            }
-            removeAllDataDatabase(database);
-         } else if (onlineStatus == "offline") {
-            if (array.length != 0) {
-               loadPunkte(array);
-               anzeigePunkteverlauf(array);
-            }
-         }
-      }
-   };
-}
-
 
 /* -------------------------------------------------- Allgemein-------------------------------------------------------*/
 
